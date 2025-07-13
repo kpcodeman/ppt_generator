@@ -1,7 +1,7 @@
 
 {
   "version": 2,
-  "builds": [
+  "functions": [
     {
       "src": "frontend/ppt_frontend/package.json",
       "use": "@vercel/static-build",
