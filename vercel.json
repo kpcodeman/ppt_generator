@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/ppt_frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend/ppt_backend/src/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/ppt_backend/src/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/ppt_frontend/dist/$1"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "backend/ppt_backend"
+  },
+  "functions": {
+    "backend/ppt_backend/src/main.py": {
+      "maxDuration": 30
+    }
+  }
+}
+

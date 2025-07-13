@@ -1,0 +1,44 @@
+{
+  "name": "ppt-generator",
+  "version": "1.0.0",
+  "description": "AI-Powered Presentation Generation Tool",
+  "main": "index.js",
+  "scripts": {
+    "install:frontend": "cd frontend/ppt_frontend && pnpm install",
+    "install:backend": "cd backend/ppt_backend && pip install -r requirements.txt",
+    "dev:frontend": "cd frontend/ppt_frontend && pnpm run dev --host",
+    "dev:backend": "cd backend/ppt_backend && source venv/bin/activate && python src/main.py",
+    "build:frontend": "cd frontend/ppt_frontend && pnpm run build",
+    "start": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "setup": "npm run install:backend && npm run install:frontend"
+  },
+  "keywords": [
+    "ppt",
+    "powerpoint",
+    "ai",
+    "llm",
+    "presentation",
+    "generator",
+    "react",
+    "flask",
+    "python"
+  ],
+  "author": "PPT Generator Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ppt-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ppt-generator/issues"
+  },
+  "homepage": "https://github.com/your-username/ppt-generator#readme"
+}
+
