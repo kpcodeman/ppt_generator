@@ -41,7 +41,8 @@ function App() {
   const [uploadedFile, setUploadedFile] = useState(null)
   const fileInputRef = useRef(null)
 
-  const API_BASE = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5001'
+  // Use relative paths for API calls - Vercel will handle routing
+  const API_BASE = ''
 
   const resetState = () => {
     setError('')
